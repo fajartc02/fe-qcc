@@ -46,7 +46,7 @@
                             {{ stepsState[i].text }}
                         </td>
                         <td>
-                            <input class="form-control" type="date" v-model="subActivity.end_time"/>
+                            <input class="form-control" type="date" v-model="subActivity.start_time"/>
                         </td>
                         <td>
                             <input class="form-control" type="date" v-model="subActivity.end_time"/>
