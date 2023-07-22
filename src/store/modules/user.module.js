@@ -46,9 +46,9 @@ const getters = {
         if (state.users) {
             const mapUsers = state.users.map(user => {
                 return {
-                    id: user.text,
+                    id: `${user.noreg}-${user.text}`,
                     name: user.text,
-                    label: `${user.text}`
+                    label: `${user.noreg}-${user.text}`
                 }
             })
             return mapUsers

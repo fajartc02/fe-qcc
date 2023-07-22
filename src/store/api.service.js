@@ -51,9 +51,10 @@ const ApiService = {
      * @param params
      * @returns {*}
      */
-    post(resource, params = null) {
+    post(resource, params = null, headers = null) {
         console.log(resource);
-        return axios.post(`${resource}`, params);
+
+        return axios.post(`${resource}`, params, headers);
     },
 
     /**

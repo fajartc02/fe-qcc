@@ -61,13 +61,13 @@ const actions = {
     },
     [VERIFY_AUTH](context) {
         console.log('verify auth');
-        
+
         if (JwtService.getToken()) {
             ApiService.setHeader();
             ApiService.get("verify")
                 .then(({ data }) => {
                     console.log(data);
-                    
+
                     // context.commit(SET_AUTH, data);
                 })
                 .catch(({ response }) => {
@@ -93,9 +93,15 @@ const mutations = {
         state.errors = error;
     },
     [SET_AUTH](state, user) {
+        console.log(user);
         state.isAuthenticated = true;
         state.user = user;
         state.errors = {};
+        state.name = user.data.fullname
+        localStorage.setItem('user', state.name)
+        localStorage.setItem('group_id', user.data.group_id)
+        localStorage.setItem('line_id', user.data.line_id)
+        localStorage.setItem('is_admin', user.data.is_admin)
         JwtService.saveToken(state.user.token);
     },
     [SET_PASSWORD](state, password) {
@@ -105,6 +111,10 @@ const mutations = {
         state.isAuthenticated = false;
         state.user = {};
         state.errors = {};
+        localStorage.removeItem('user')
+        localStorage.removeItem('group_id')
+        localStorage.removeItem('line_id')
+        localStorage.removeItem('is_admin')
         JwtService.destroyToken();
     }
 };

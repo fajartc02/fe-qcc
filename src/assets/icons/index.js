@@ -86,7 +86,11 @@ import {
     cilWarning,
     cilTrash,
     cilPlus,
-    cilX
+    cilX,
+
+    cilClock,
+    cilCheckAlt,
+    cilPaperPlane
 } from '@coreui/icons'
 
 export const iconsSet = Object.assign({}, {
@@ -100,6 +104,11 @@ export const iconsSet = Object.assign({}, {
     cilTrash,
     cilPlus,
     cilX,
+
+    // For QCC dashboard
+    cilClock,
+    cilCheckAlt,
+    cilPaperPlane,
 
     cilArrowBottom,
     cilArrowRight,

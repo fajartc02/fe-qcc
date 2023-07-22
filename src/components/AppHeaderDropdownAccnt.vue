@@ -1,10 +1,11 @@
 <template>
   <CDropdown variant="nav-item">
     <CDropdownToggle placement="bottom-end" class="py-0" :caret="false">
+      
       <CAvatar :src="avatar" size="md" />
     </CDropdownToggle>
     <CDropdownMenu class="pt-0">
-      <CDropdownHeader component="h6" class="bg-light fw-semibold py-2">
+      <!-- <CDropdownHeader component="h6" class="bg-light fw-semibold py-2">
         Account
       </CDropdownHeader>
       <CDropdownItem>
@@ -39,14 +40,15 @@
       <CDropdownDivider />
       <CDropdownItem>
         <CIcon icon="cil-shield-alt" /> Lock Account
-      </CDropdownItem>
-      <CDropdownItem> <CIcon icon="cil-lock-locked" /> Logout </CDropdownItem>
+      </CDropdownItem> -->
+      <CDropdownItem @click="logout()"> <CIcon icon="cil-lock-locked"/> Logout </CDropdownItem>
     </CDropdownMenu>
   </CDropdown>
 </template>
 
 <script>
-import avatar from '@/assets/images/avatars/8.jpg'
+import avatar from '@/assets/images/avatars/10.png'
+import {LOGOUT} from '@/store/modules/auth.module'
 export default {
   name: 'AppHeaderDropdownAccnt',
   setup() {
@@ -55,5 +57,12 @@ export default {
       itemsCount: 42,
     }
   },
+  methods: {
+    async logout() {
+      await this.$store.dispatch(LOGOUT)
+      this.$router.push('/login')
+    }
+  }
+  
 }
 </script>

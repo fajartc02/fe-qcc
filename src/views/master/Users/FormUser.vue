@@ -42,7 +42,7 @@
                 <CInputGroupText>Noreg</CInputGroupText>
                 <CFormInput v-model="form.noreg"/>
             </CInputGroup>
-            <CInputGroup class="mb-4">
+            <CInputGroup v-if="!isUpdate" class="mb-4">
                 <CInputGroupText>
                     Password<CIcon icon="cil-lock-locked" />
                 </CInputGroupText>
@@ -133,7 +133,7 @@ export default {
                 Swal.fire('Lengkapi Input data', '', 'info')
             } catch (error) {
                 console.log(error);
-                Swal.fire('Gagal menambah job', '', 'error')
+                Swal.fire('Gagal menambah user', '', 'error')
             }
         },
         async edit() {
@@ -143,6 +143,9 @@ export default {
                     if(!this.form[key]) isRequired = false
                 }
                 if(isRequired) {
+                    if(this.isUpdate) {
+                        delete this.form.password
+                    }
                     await this.$store.dispatch(PUT_USER, this.form)
                     .then(() => {
                         Swal.fire('Berhasil edit user', '', 'success')

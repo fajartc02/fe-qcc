@@ -2,87 +2,100 @@ export default [{
         component: 'CNavItem',
         name: 'Dashboard',
         to: '/',
-        icon: 'cil-speedometer'
+        icon: 'cil-speedometer',
+        is_admin: 'false'
+    },
+    {
+        component: 'CNavTitle', // --- MASTER MENU
+        name: 'Register',
+        is_admin: 'false'
     },
     {
         component: 'CNavItem',
-        name: 'Schedule Observasi',
-        to: '/schedule/observation',
-        icon: 'cil-clipboard',
-    },
-    {
-        component: 'CNavTitle', // --- HISTORY MENU
-        name: 'History Data',
+        name: 'Daftar Group',
+        to: '/qcc/group/add',
+        icon: 'cil-pencil',
+        is_admin: 'false'
     },
     {
         component: 'CNavItem',
-        name: 'Observasi',
-        to: '/history/observation',
-        icon: 'cil-clipboard',
+        name: 'Group Sudah Registrasi',
+        to: '/qcc/group',
+        icon: 'cil-notes',
+        is_admin: 'false'
+    },
+    {
+        component: 'CNavTitle', // --- MASTER MENU
+        name: 'Acitivity',
+        is_admin: 'false'
+    },
+    {
+        component: 'CNavItem',
+        name: 'Upload Group Activity',
+        to: '/qcc/group/activity',
+        icon: 'cil-notes',
+        is_admin: 'false'
     },
     {
         component: 'CNavTitle', // --- MASTER MENU
         name: 'Master Data',
-    },
-    {
-        component: 'CNavGroup',
-        name: 'Locations',
-        icon: 'cil-building',
-        items: [{
-                component: 'CNavItem',
-                name: 'Company',
-                to: '/master/company',
-            },
-            {
-                component: 'CNavItem',
-                name: 'Plant',
-                to: '/master/plant',
-                // icon: 'cil-factory',
-            },
-            {
-                component: 'CNavItem',
-                name: 'Shop',
-                to: '/master/shop',
-                // icon: 'cil-double-quote-sans-right',
-            },
-            {
-                component: 'CNavItem',
-                name: 'Line',
-                to: '/master/line',
-                // icon: 'cil-border-all',
-            },
-            {
-                component: 'CNavItem',
-                name: 'Machine',
-                to: '/master/machine',
-                // icon: 'cil-border-all',
-            },
-        ]
+        is_admin: 'true'
     },
     {
         component: 'CNavItem',
         name: 'Users',
         to: '/master/user',
         icon: 'cil-user',
+        is_admin: 'true'
     },
+    {
+        component: 'CNavItem',
+        name: 'Qcc Activity',
+        to: '/qcc/activity',
+        icon: 'cil-puzzle',
+        is_admin: 'true'
+    },
+    // {
+    //     component: 'CNavGroup',
+    //     name: 'Locations',
+    //     icon: 'cil-building',
+    //     items: [{
+    //             component: 'CNavItem',
+    //             name: 'Company',
+    //             to: '/master/company',
+    //         },
+    //         {
+    //             component: 'CNavItem',
+    //             name: 'Plant',
+    //             to: '/master/plant',
+    //             // icon: 'cil-factory',
+    //         },
+    //         {
+    //             component: 'CNavItem',
+    //             name: 'Shop',
+    //             to: '/master/shop',
+    //             // icon: 'cil-double-quote-sans-right',
+    //         },
+    //         {
+    //             component: 'CNavItem',
+    //             name: 'Line',
+    //             to: '/master/line',
+    //             // icon: 'cil-border-all',
+    //         },
+    //         {
+    //             component: 'CNavItem',
+    //             name: 'Machine',
+    //             to: '/master/machine',
+    //             // icon: 'cil-border-all',
+    //         },
+    //     ]
+    // },
     // {
     //     component: 'CNavItem',
     //     name: 'Group',
     //     to: '/master/group',
     //     icon: 'cil-layers',
     // },
-    {
-        component: 'CNavItem',
-        name: 'Pos',
-        to: '/master/pos',
-        icon: 'cil-border-all',
-    },
-    {
-        component: 'CNavItem',
-        name: 'Job',
-        to: '/master/job',
-        icon: 'cil-puzzle',
-    },
     // {
     //   component: 'CNavTitle',
     //   name: 'Theme',

@@ -8,11 +8,15 @@ import line from "./modules/line.module";
 import machine from "./modules/machine.module";
 import user from "./modules/user.module";
 import group from "./modules/group.module";
+import step from "./modules/step.module";
 
 import observations from "./modules/observation.module"
 import pos from "./modules/pos.module"
 import job from "./modules/job.module"
 import jobType from "./modules/jobType.module"
+
+import qccActivity from "./modules/qccActivity.module"
+import qccGroup from "./modules/qccGroup.module"
 
 export default createStore({
     state: {
@@ -41,10 +45,13 @@ export default createStore({
         shop,
         line,
         machine,
+        step,
 
         observations,
         pos,
         job,
-        jobType
+        jobType,
+        qccActivity,
+        qccGroup
     },
 })

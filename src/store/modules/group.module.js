@@ -37,6 +37,18 @@ const getters = {
             })
             return mapGroups
         }
+    },
+    getGroupsTreeselect(state) {
+        if (state.groups) {
+            const mapGroups = state.groups.map(group => {
+                return {
+                    id: group.id,
+                    name: group.group_nm,
+                    label: `${group.group_nm}`
+                }
+            })
+            return mapGroups
+        }
     }
 };
 

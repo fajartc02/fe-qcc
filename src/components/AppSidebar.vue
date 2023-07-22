@@ -12,7 +12,9 @@
     "
   >
     <CSidebarBrand>
-      <CIcon
+      <img src="@/assets/brand/qcc.png" width="150" height="50">
+
+      <!-- <CIcon
         custom-class-name="sidebar-brand-full"
         :icon="logoNegative"
         :height="35"
@@ -21,7 +23,7 @@
         custom-class-name="sidebar-brand-narrow"
         :icon="sygnet"
         :height="35"
-      />
+      /> -->
     </CSidebarBrand>
     <AppSidebarNav />
     <CSidebarToggler

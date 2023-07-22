@@ -17,15 +17,15 @@ const getters = {
     },
     getLinesOpts(state) {
         if (state.lines) {
+            state.lines.unshift({
+                id: "-1",
+                line_nm: "All"
+            })
             const mapLines = state.lines.map(line => {
                 return {
                     id: line.id,
                     text: line.line_nm
                 }
-            })
-            mapLines.push({
-                id: "-1",
-                text: 'All'
             })
             return mapLines
         }
@@ -36,6 +36,18 @@ const getters = {
                 return {
                     id: line.id,
                     text: line.line_nm
+                }
+            })
+            return mapLines
+        }
+    },
+    getLinesTreeselect(state) {
+        if (state.lines) {
+            const mapLines = state.lines.map(line => {
+                return {
+                    id: line.id,
+                    name: line.line_nm,
+                    label: `${line.line_nm}`
                 }
             })
             return mapLines

@@ -8,18 +8,27 @@
         <CIcon :icon="logo" height="48" alt="Logo" />
       </CHeaderBrand>
       <CHeaderNav class="d-none d-md-flex me-auto">
-        <CNavItem>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <h5>QCC Activity</h5>
+        </div>
+        <!-- <CNavItem>
           <CNavLink href="/dashboard"> Dashboard </CNavLink>
-        </CNavItem>
-        <CNavItem>
+        </CNavItem> -->
+        <!-- <CNavItem>
           <CNavLink href="#">Users</CNavLink>
         </CNavItem>
         <CNavItem>
           <CNavLink href="#">Settings</CNavLink>
-        </CNavItem>
+        </CNavItem> -->
       </CHeaderNav>
+      
       <CHeaderNav>
-        <CNavItem>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <div class="d-flex col">
+            Hallo, {{ name }}
+          </div>
+        </div>
+        <!-- <CNavItem>
           <CNavLink href="#">
             <CIcon class="mx-2" icon="cil-bell" size="lg" />
           </CNavLink>
@@ -33,7 +42,7 @@
           <CNavLink href="#">
             <CIcon class="mx-2" icon="cil-envelope-open" size="lg" />
           </CNavLink>
-        </CNavItem>
+        </CNavItem> -->
         <AppHeaderDropdownAccnt />
       </CHeaderNav>
     </CContainer>
@@ -54,10 +63,20 @@ export default {
     AppBreadcrumb,
     AppHeaderDropdownAccnt,
   },
+  data() {
+    return {
+      name: null
+    }
+  },
   setup() {
     return {
       logo,
     }
   },
+  mounted() {
+    if (localStorage.getItem('user')) {
+      this.name = localStorage.getItem('user')
+    }
+  }
 }
 </script>
