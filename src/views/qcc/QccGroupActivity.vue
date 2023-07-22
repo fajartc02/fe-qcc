@@ -47,7 +47,7 @@
                    <th style="border: 1px solid black!important;">Advisor</th>
                    <th style="border: 1px solid black!important;">Facilitator</th>
                    <th style="border: 1px solid black!important;">Circle Leader</th>
-                   <th style="border: 1px solid black!important;">Team Leader</th>
+                   <th style="border: 1px solid black!important;">Tema Leader</th>
                    <th style="border: 1px solid black!important;">Members</th>
                    <!-- <th style="border: 1px solid black!important;">Dibuat</th> -->
                    <!-- <th style="border: 1px solid black!important;">Tanggal Di buat</th> -->
