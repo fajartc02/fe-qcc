@@ -41,7 +41,7 @@
                 <treeselect :disabled="selectedLine == -1" class="w-50" v-model="form.cleader_nm" :options="getUsersTreeselect" />
             </CInputGroup>
             <CInputGroup class="mb-3">
-                <CInputGroupText>Theme Leader</CInputGroupText>
+                <CInputGroupText>Tema Leader</CInputGroupText>
                 <treeselect :disabled="selectedLine == -1" class="w-50" v-model="form.tleader_nm" :options="getUsersTreeselect" />
             </CInputGroup>
             <CInputGroup class="mb-3">
